@@ -15,14 +15,15 @@ function setup() {
   engine = Engine.create();
   world = engine.world;
 
-  playerBase = new PlayerBase(300, random(450, height - 300), 180, 150);
+  playerBase = new PlayerBase(300,400, 180, 150);
 //create a player object from the Player class.
-
+player = new Player(
+    width - 700,
+      playerBase.body.position.y - 153,
+      50,
+      180);
   computerBase = new ComputerBase(
-    width - 300,
-    random(450, height - 300),
-    180,
-    150
+    width - 300,400,180,150
   );
   computer = new Computer(
     width - 280,
@@ -48,7 +49,7 @@ function draw() {
  
   playerBase.display();
 //call the display() function for the player object.
-  
+  player.display();
 
   computerBase.display();
   computer.display();
